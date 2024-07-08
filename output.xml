@@ -1,40 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-07-08T19:32:48.676677" rpa="false" schemaversion="5">
-<suite id="s1" name="User registration" source="c:\Users\ankushsharma\Tagesspiegel\Tests\User_registration.robot">
-<test id="s1-t1" name="User Registration and Verification" line="5">
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-07-08T21:17:05.585448" rpa="false" schemaversion="5">
+<suite id="s1" name="User Registration &amp; User registration">
+<suite id="s1-s1" name="User Registration" source="c:\Users\ankushsharma\Tagesspiegel\tests\user_registration.robot">
+<test id="s1-s1-t1" name="User Registration and Verification" line="5">
 <kw name="Open Browser And Navigate to Registration Form" owner="keywords">
 <kw name="New Browser" owner="Browser">
-<msg time="2024-07-08T19:33:01.193648" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\ankushsharma\\Tagesspiegel\\browser\\traces\\80747462-eba9-49b4-99eb-8bbe8121688f"}</msg>
-<msg time="2024-07-08T19:33:06.941769" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\ankushsharma\\Tagesspiegel\\browser\\traces\\80747462-eba9-49b4-99eb-8bbe8121688f"}</msg>
+<msg time="2024-07-08T21:17:07.398529" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\ankushsharma\\Tagesspiegel\\browser\\traces\\e3c4fd3f-343b-40b3-b10a-9ab1d85a7d6b"}</msg>
+<msg time="2024-07-08T21:17:07.876402" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\ankushsharma\\Tagesspiegel\\browser\\traces\\e3c4fd3f-343b-40b3-b10a-9ab1d85a7d6b"}</msg>
 <arg>headless=False</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2024-07-08T19:33:01.187873" elapsed="5.756401"/>
+<status status="PASS" start="2024-07-08T21:17:07.397369" elapsed="0.479033"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2024-07-08T19:33:13.353603" level="INFO">Successfully initialized new page object and opened url: https://www.tagesspiegel.de//Anmelden</msg>
-<msg time="2024-07-08T19:33:13.354593" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
-<arg>${BASE_URL}/Anmelden</arg>
+<msg time="2024-07-08T21:17:12.807971" level="INFO">Successfully initialized new page object and opened url: https://www.tagesspiegel.de/</msg>
+<msg time="2024-07-08T21:17:12.807971" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2024-07-08T19:33:06.947295" elapsed="6.407672"/>
+<status status="PASS" start="2024-07-08T21:17:07.877402" elapsed="4.931568"/>
 </kw>
-<status status="PASS" start="2024-07-08T19:33:01.183871" elapsed="12.171985"/>
+<kw name="Set Viewport Size" owner="Browser">
+<msg time="2024-07-08T21:17:13.083469" level="INFO">Set viewport size to: [object Object]</msg>
+<arg>1920</arg>
+<arg>1080</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<status status="PASS" start="2024-07-08T21:17:12.810266" elapsed="0.275552"/>
 </kw>
-<status status="PASS" start="2024-07-08T19:33:01.158356" elapsed="12.200635"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-07-08T21:17:13.089461" level="INFO">i am waiting for the sleep timer</msg>
+<arg>i am waiting for the sleep timer</arg>
+<arg>console=${True}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-07-08T21:17:13.088006" elapsed="0.003640"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-08T21:17:15.094520" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-08T21:17:13.091646" elapsed="2.003127"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-07-08T21:17:15.097183" level="INFO">i am waiting for the Cookies section</msg>
+<arg>i am waiting for the Cookies section</arg>
+<arg>console=${True}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-07-08T21:17:15.096071" elapsed="0.003338"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-07-08T21:17:25.686173" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2024-07-08T21:17:25.687160" level="INFO">See also file:///C:/Users/ankushsharma/Tagesspiegel/playwright-log.txt for additional details.</msg>
+<msg time="2024-07-08T21:17:25.688168" level="FAIL">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  [2m- waiting for locator('button[title="Alle akzeptieren"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>css=button[title="Alle akzeptieren"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="FAIL" start="2024-07-08T21:17:15.101896" elapsed="10.614431">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  [2m- waiting for locator('button[title="Alle akzeptieren"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>css=button[title="Alle akzeptieren"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-07-08T21:17:25.717060" elapsed="0.000000"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>text=Anmelden</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2024-07-08T21:17:25.718054" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-07-08T21:17:07.394370" elapsed="18.323684">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  [2m- waiting for locator('button[title="Alle akzeptieren"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<status status="FAIL" start="2024-07-08T21:17:07.351919" elapsed="18.369715">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  [2m- waiting for locator('button[title="Alle akzeptieren"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
 </test>
-<status status="PASS" start="2024-07-08T19:32:48.758583" elapsed="25.382305"/>
+<status status="FAIL" start="2024-07-08T21:17:05.670392" elapsed="20.415648"/>
+</suite>
+<suite id="s1-s2" name="User registration" source="c:\Users\ankushsharma\Tagesspiegel\Tests\User_registration.robot">
+<test id="s1-s2-t1" name="User Registration and Verification" line="5">
+<kw name="Open Browser And Navigate to Registration Form" owner="keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-07-08T21:17:26.172582" level="INFO">Switching browser to browser=54317c29-6084-44ff-a55c-41f4f08077cc</msg>
+<msg time="2024-07-08T21:17:26.186277" level="INFO">Successfully changed active browser: browser=54317c29-6084-44ff-a55c-41f4f08077cc</msg>
+<msg time="2024-07-08T21:17:26.188279" level="INFO">Reusing existing browser with id: browser=54317c29-6084-44ff-a55c-41f4f08077cc</msg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-07-08T21:17:26.170331" elapsed="0.018937"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-07-08T21:17:32.349181" level="INFO">Successfully initialized new page object and opened url: https://www.tagesspiegel.de/</msg>
+<msg time="2024-07-08T21:17:32.351601" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-07-08T21:17:26.190327" elapsed="6.162137"/>
+</kw>
+<kw name="Set Viewport Size" owner="Browser">
+<msg time="2024-07-08T21:17:33.204125" level="INFO">Set viewport size to: [object Object]</msg>
+<arg>1920</arg>
+<arg>1080</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<status status="PASS" start="2024-07-08T21:17:32.353710" elapsed="0.853124"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-07-08T21:17:33.209867" level="INFO">i am waiting for the sleep timer</msg>
+<arg>i am waiting for the sleep timer</arg>
+<arg>console=${True}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-07-08T21:17:33.208037" elapsed="0.014463"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-08T21:17:35.225385" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-08T21:17:33.223876" elapsed="2.002212"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-07-08T21:17:35.228547" level="INFO">i am waiting for the Cookies section</msg>
+<arg>i am waiting for the Cookies section</arg>
+<arg>console=${True}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-07-08T21:17:35.227525" elapsed="0.002410"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-07-08T21:17:45.614537" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-2.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-2.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2024-07-08T21:17:45.615577" level="INFO">See also file:///C:/Users/ankushsharma/Tagesspiegel/playwright-log.txt for additional details.</msg>
+<msg time="2024-07-08T21:17:45.617245" level="FAIL">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  [2m- waiting for locator('button[title="Alle akzeptieren"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>css=button[title="Alle akzeptieren"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="FAIL" start="2024-07-08T21:17:35.231463" elapsed="10.390462">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  [2m- waiting for locator('button[title="Alle akzeptieren"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>css=button[title="Alle akzeptieren"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-07-08T21:17:45.622923" elapsed="0.000000"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>text=Anmelden</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2024-07-08T21:17:45.623925" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-07-08T21:17:26.169347" elapsed="19.455507">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  [2m- waiting for locator('button[title="Alle akzeptieren"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<status status="FAIL" start="2024-07-08T21:17:26.153311" elapsed="19.473072">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  [2m- waiting for locator('button[title="Alle akzeptieren"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</test>
+<status status="FAIL" start="2024-07-08T21:17:26.115298" elapsed="19.912721"/>
+</suite>
+<status status="FAIL" start="2024-07-08T21:17:05.598362" elapsed="40.464367"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="User registration">User registration</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="User Registration &amp; User registration">User Registration &amp; User registration</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="User Registration">User Registration &amp; User registration.User Registration</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2" name="User registration">User Registration &amp; User registration.User registration</stat>
 </suite>
 </statistics>
 <errors>

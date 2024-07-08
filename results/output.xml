@@ -1,49 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-07-08T19:38:14.060549" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-07-09T00:28:07.338040" rpa="false" schemaversion="5">
 <suite id="s1" name="User Registration" source="C:\Users\ankushsharma\Tagesspiegel\tests\user_registration.robot">
 <test id="s1-t1" name="User Registration and Verification" line="5">
 <kw name="Open Browser And Navigate to Registration Form" owner="keywords">
 <kw name="New Browser" owner="Browser">
-<msg time="2024-07-08T19:38:19.041689" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\ankushsharma\\Tagesspiegel\\results\\browser\\traces\\2df1ab41-f311-41cf-8dab-d32db1febabc"}</msg>
-<msg time="2024-07-08T19:38:20.402633" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\ankushsharma\\Tagesspiegel\\results\\browser\\traces\\2df1ab41-f311-41cf-8dab-d32db1febabc"}</msg>
+<msg time="2024-07-09T00:28:08.790936" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\ankushsharma\\Tagesspiegel\\results\\browser\\traces\\e23ffaf3-f1e1-413e-86b0-aad6bb031ebf"}</msg>
+<msg time="2024-07-09T00:28:09.114813" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\ankushsharma\\Tagesspiegel\\results\\browser\\traces\\e23ffaf3-f1e1-413e-86b0-aad6bb031ebf"}</msg>
 <arg>headless=False</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2024-07-08T19:38:19.037966" elapsed="1.365227"/>
+<status status="PASS" start="2024-07-09T00:28:08.790936" elapsed="0.324876"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2024-07-08T19:38:33.974934" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
-Error: Tried to take screenshot, but no page was open.</msg>
-<msg time="2024-07-08T19:38:33.975546" level="INFO">See also file:///C:/Users/ankushsharma/Tagesspiegel/results/playwright-log.txt for additional details.</msg>
-<msg time="2024-07-08T19:38:33.977361" level="FAIL">TimeoutError: page.goto: Timeout 10000ms exceeded.
-Call log:
-  [2m- navigating to "https://www.tagesspiegel.de/", waiting until "load"[22m
-
-Tip: Use "Set Browser Timeout" for increasing the timeout.</msg>
+<msg time="2024-07-09T00:28:12.102059" level="INFO">Successfully initialized new page object and opened url: https://www.tagesspiegel.de/</msg>
+<msg time="2024-07-09T00:28:12.102059" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
 <arg>${BASE_URL}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="FAIL" start="2024-07-08T19:38:20.405439" elapsed="14.305904">TimeoutError: page.goto: Timeout 10000ms exceeded.
-Call log:
-  [2m- navigating to "https://www.tagesspiegel.de/", waiting until "load"[22m
-
-Tip: Use "Set Browser Timeout" for increasing the timeout.</status>
+<status status="PASS" start="2024-07-09T00:28:09.115812" elapsed="2.986247"/>
 </kw>
-<status status="FAIL" start="2024-07-08T19:38:19.034843" elapsed="15.678372">TimeoutError: page.goto: Timeout 10000ms exceeded.
-Call log:
-  [2m- navigating to "https://www.tagesspiegel.de/", waiting until "load"[22m
-
-Tip: Use "Set Browser Timeout" for increasing the timeout.</status>
+<kw name="Set Viewport Size" owner="Browser">
+<msg time="2024-07-09T00:28:12.160060" level="INFO">Set viewport size to: [object Object]</msg>
+<arg>1920</arg>
+<arg>1080</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<status status="PASS" start="2024-07-09T00:28:12.102059" elapsed="0.058001"/>
 </kw>
-<status status="FAIL" start="2024-07-08T19:38:19.020122" elapsed="15.697575">TimeoutError: page.goto: Timeout 10000ms exceeded.
-Call log:
-  [2m- navigating to "https://www.tagesspiegel.de/", waiting until "load"[22m
-
-Tip: Use "Set Browser Timeout" for increasing the timeout.</status>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-09T00:28:14.160479" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-09T00:28:12.160060" elapsed="2.000419"/>
+</kw>
+<kw name="Select Frame">
+<msg time="2024-07-09T00:28:14.164480" level="FAIL">No keyword with name 'Select Frame' found.</msg>
+<arg>title=Iframe title</arg>
+<status status="FAIL" start="2024-07-09T00:28:14.164480" elapsed="0.000406">No keyword with name 'Select Frame' found.</status>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>css=button[title="Alle akzeptieren"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2024-07-09T00:28:14.164886" elapsed="0.000000"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>css=button[title="Alle akzeptieren"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-07-09T00:28:14.165445" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Cookies accepted</arg>
+<arg>console=</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-07-09T00:28:14.165445" elapsed="0.000000"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>text=Anmelden</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2024-07-09T00:28:14.165445" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-07-09T00:28:08.788935" elapsed="5.377550">No keyword with name 'Select Frame' found.</status>
+</kw>
+<status status="FAIL" start="2024-07-09T00:28:08.784934" elapsed="5.382552">No keyword with name 'Select Frame' found.</status>
 </test>
-<status status="FAIL" start="2024-07-08T19:38:14.066951" elapsed="21.104455"/>
+<status status="FAIL" start="2024-07-09T00:28:07.340046" elapsed="7.087579"/>
 </suite>
 <statistics>
 <total>
@@ -56,5 +87,15 @@ Tip: Use "Set Browser Timeout" for increasing the timeout.</status>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-07-09T00:28:07.657140" level="ERROR">Error in file 'C:\Users\ankushsharma\Tagesspiegel\Resource\keywords.resource' on line 3: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\ankushsharma\AppData\Local\Programs\Python\Python312\Scripts\robot.exe
+  C:\Users\ankushsharma\AppData\Local\Programs\Python\Python312\python312.zip
+  C:\Users\ankushsharma\AppData\Local\Programs\Python\Python312\DLLs
+  C:\Users\ankushsharma\AppData\Local\Programs\Python\Python312\Lib
+  C:\Users\ankushsharma\AppData\Local\Programs\Python\Python312
+  C:\Users\ankushsharma\AppData\Local\Programs\Python\Python312\Lib\site-packages</msg>
 </errors>
 </robot>
