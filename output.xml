@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-07-08T19:32:48.676677" rpa="false" schemaversion="5">
+<suite id="s1" name="User registration" source="c:\Users\ankushsharma\Tagesspiegel\Tests\User_registration.robot">
+<test id="s1-t1" name="User Registration and Verification" line="5">
+<kw name="Open Browser And Navigate to Registration Form" owner="keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-07-08T19:33:01.193648" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\ankushsharma\\Tagesspiegel\\browser\\traces\\80747462-eba9-49b4-99eb-8bbe8121688f"}</msg>
+<msg time="2024-07-08T19:33:06.941769" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\ankushsharma\\Tagesspiegel\\browser\\traces\\80747462-eba9-49b4-99eb-8bbe8121688f"}</msg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-07-08T19:33:01.187873" elapsed="5.756401"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-07-08T19:33:13.353603" level="INFO">Successfully initialized new page object and opened url: https://www.tagesspiegel.de//Anmelden</msg>
+<msg time="2024-07-08T19:33:13.354593" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}/Anmelden</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-07-08T19:33:06.947295" elapsed="6.407672"/>
+</kw>
+<status status="PASS" start="2024-07-08T19:33:01.183871" elapsed="12.171985"/>
+</kw>
+<status status="PASS" start="2024-07-08T19:33:01.158356" elapsed="12.200635"/>
+</test>
+<status status="PASS" start="2024-07-08T19:32:48.758583" elapsed="25.382305"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="User registration">User registration</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
