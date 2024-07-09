@@ -1,99 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-07-09T15:19:42.778547" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-07-09T19:52:18.426151" rpa="false" schemaversion="5">
 <suite id="s1" name="User Registration" source="C:\Users\ankushsharma\Tagesspiegel\tests\user_registration.robot">
 <test id="s1-t1" name="User Registration and Verification" line="5">
 <kw name="Open Browser And Navigate to Registration Form" owner="keywords">
 <kw name="New Browser" owner="Browser">
-<msg time="2024-07-09T15:19:44.533669" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\ankushsharma\\Tagesspiegel\\results\\browser\\traces\\34931ee6-8b90-4682-b74b-afae9dd0979c"}</msg>
-<msg time="2024-07-09T15:19:46.138168" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\ankushsharma\\Tagesspiegel\\results\\browser\\traces\\34931ee6-8b90-4682-b74b-afae9dd0979c"}</msg>
+<msg time="2024-07-09T19:52:19.834838" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\ankushsharma\\Tagesspiegel\\results\\browser\\traces\\f43b4daf-674f-45fc-bf75-fb9dd9810770"}</msg>
+<msg time="2024-07-09T19:52:20.140547" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\ankushsharma\\Tagesspiegel\\results\\browser\\traces\\f43b4daf-674f-45fc-bf75-fb9dd9810770"}</msg>
 <arg>headless=False</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2024-07-09T15:19:44.532589" elapsed="1.605579"/>
+<status status="PASS" start="2024-07-09T19:52:19.833846" elapsed="0.307473"/>
 </kw>
 <kw name="Set Browser Timeout" owner="Browser">
 <arg>10s</arg>
 <tag>Config</tag>
 <tag>Setter</tag>
 <doc>Sets the timeout used by most input and getter keywords.</doc>
-<status status="PASS" start="2024-07-09T15:19:46.138168" elapsed="0.002002"/>
+<status status="PASS" start="2024-07-09T19:52:20.142380" elapsed="0.000921"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2024-07-09T15:19:52.728747" level="INFO">Successfully initialized new page object and opened url: https://www.tagesspiegel.de/</msg>
-<msg time="2024-07-09T15:19:52.728747" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<msg time="2024-07-09T19:52:23.028992" level="INFO">Successfully initialized new page object and opened url: https://www.tagesspiegel.de/</msg>
+<msg time="2024-07-09T19:52:23.028992" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
 <arg>${BASE_URL}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2024-07-09T15:19:46.140170" elapsed="6.588577"/>
+<status status="PASS" start="2024-07-09T19:52:20.144304" elapsed="2.884688"/>
 </kw>
 <kw name="Set Viewport Size" owner="Browser">
-<msg time="2024-07-09T15:19:52.877617" level="INFO">Set viewport size to: [object Object]</msg>
+<msg time="2024-07-09T19:52:23.098266" level="INFO">Set viewport size to: [object Object]</msg>
 <arg>1920</arg>
 <arg>1080</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Sets current Pages viewport size to specified dimensions.</doc>
-<status status="PASS" start="2024-07-09T15:19:52.728747" elapsed="0.148870"/>
+<status status="PASS" start="2024-07-09T19:52:23.029992" elapsed="0.068274"/>
 </kw>
 <kw name="Set Selector Prefix" owner="Browser">
 <arg>${IFRAME_SELECTOR}</arg>
 <tag>Config</tag>
 <tag>Setter</tag>
 <doc>Sets the prefix for all selectors in the given scope.</doc>
-<status status="PASS" start="2024-07-09T15:19:52.877617" elapsed="0.001542"/>
+<status status="PASS" start="2024-07-09T19:52:23.099254" elapsed="0.001015"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-07-09T15:19:52.879611" level="INFO">Clicks the element '&gt;&gt;&gt; //button[@title="Alle akzeptieren"]'.</msg>
+<msg time="2024-07-09T19:52:23.102290" level="INFO">Clicks the element '&gt;&gt;&gt; //button[@title="Alle akzeptieren"]'.</msg>
 <arg>${ACCEPT_ALL}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-07-09T15:19:52.879159" elapsed="0.564207"/>
+<status status="PASS" start="2024-07-09T19:52:23.101294" elapsed="0.865196"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-07-09T15:19:53.449385" level="INFO">Cookies accepted</msg>
+<msg time="2024-07-09T19:52:23.966490" level="INFO">Cookies accepted</msg>
 <arg>Cookies accepted</arg>
 <arg>console=True</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-07-09T15:19:53.447442" elapsed="0.004940"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-07-09T15:19:54.457046" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-07-09T15:19:53.455008" elapsed="1.002038"/>
+<status status="PASS" start="2024-07-09T19:52:23.966490" elapsed="0.000999"/>
 </kw>
 <kw name="Set Selector Prefix" owner="Browser">
 <arg>${FOCUS_MAIN_PAGE}</arg>
 <tag>Config</tag>
 <tag>Setter</tag>
 <doc>Sets the prefix for all selectors in the given scope.</doc>
-<status status="PASS" start="2024-07-09T15:19:54.458037" elapsed="0.001013"/>
+<status status="PASS" start="2024-07-09T19:52:23.967489" elapsed="0.000973"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-07-09T15:19:54.647767" level="INFO">Waited for Element with selector xpath=//*[@id="page-container"] //*[@id="sso-menu"]/div/a/span/span at state visible</msg>
+<msg time="2024-07-09T19:52:23.987466" level="INFO">Waited for Element with selector xpath=//*[@id="page-container"] //*[@id="sso-menu"]/div/a/span/span at state visible</msg>
 <arg>${ANMELDEN_SELECTOR}</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-07-09T15:19:54.459050" elapsed="0.189952"/>
+<status status="PASS" start="2024-07-09T19:52:23.968462" elapsed="0.019004"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-07-09T15:19:54.659041" level="INFO">Clicks the element '//*[@id="sso-menu"]/div/a/span/span'.</msg>
+<msg time="2024-07-09T19:52:23.989590" level="INFO">Clicks the element '//*[@id="sso-menu"]/div/a/span/span'.</msg>
 <arg>${ANMELDEN_SELECTOR}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-07-09T15:19:54.651320" elapsed="5.264333"/>
+<status status="PASS" start="2024-07-09T19:52:23.988469" elapsed="0.099663"/>
 </kw>
-<status status="PASS" start="2024-07-09T15:19:44.531601" elapsed="15.384052"/>
+<status status="PASS" start="2024-07-09T19:52:19.832816" elapsed="4.255316"/>
 </kw>
-<status status="PASS" start="2024-07-09T15:19:44.522589" elapsed="15.394868"/>
+<kw name="Fill Registration Form and Submit" owner="keywords">
+<kw name="Set Selector Prefix" owner="Browser">
+<arg>${REGISTRATION_IFRAME}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the prefix for all selectors in the given scope.</doc>
+<status status="PASS" start="2024-07-09T19:52:24.088770" elapsed="0.001138"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-07-09T19:52:28.833006" level="INFO">Waited for Element with selector css=iframe#modal-iframe &gt;&gt;&gt; //button[@data-nav-item="register"] at state visible</msg>
+<arg>${REGISTRATION_BUTTON}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-07-09T19:52:24.090773" elapsed="4.742233"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-09T19:52:30.833604" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-09T19:52:28.833006" elapsed="2.000598"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-07-09T19:52:30.833604" level="INFO">Clicks the element '&gt;&gt;&gt; //button[@data-nav-item="register"]'.</msg>
+<arg>${REGISTRATION_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-07-09T19:52:30.833604" elapsed="0.077797"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-07-09T19:52:30.935144" level="INFO">Waited for Element with selector css=iframe#modal-iframe &gt;&gt;&gt; //*[@id="forms/formRegistration_email"] at state visible</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-07-09T19:52:30.911401" elapsed="0.024482"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-07-09T19:52:30.935883" level="INFO">Fills the text 'test@example.com' in the given field.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>test@example.com</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-07-09T19:52:30.935883" elapsed="0.039682"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-07-09T19:52:30.976846" level="INFO">Fills the text 'Abc' in the given field.</msg>
+<arg>${FIRST_NAME}</arg>
+<arg>Abc</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-07-09T19:52:30.975847" elapsed="0.121856"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-07-09T19:52:31.098741" level="INFO">Fills the text 'XYZ' in the given field.</msg>
+<arg>${LAST_NAME}</arg>
+<arg>XYZ</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-07-09T19:52:31.097703" elapsed="0.054818"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-07-09T19:52:31.153276" level="INFO">Clicks the element '&gt;&gt;&gt; //button[@value="Jetzt registrieren"]'.</msg>
+<arg>${REGISTRATION}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-07-09T19:52:31.152521" elapsed="0.115852"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-09T19:52:33.269729" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-09T19:52:31.268725" elapsed="2.001004"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2024-07-09T19:52:33.780873" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2024-07-09T19:52:33.269729" elapsed="0.512149"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-09T19:52:38.782599" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-09T19:52:33.781878" elapsed="5.000721"/>
+</kw>
+<status status="PASS" start="2024-07-09T19:52:24.088770" elapsed="14.693829"/>
+</kw>
+<status status="PASS" start="2024-07-09T19:52:19.829815" elapsed="18.953843"/>
 </test>
-<status status="PASS" start="2024-07-09T15:19:42.781584" elapsed="20.184875"/>
+<status status="PASS" start="2024-07-09T19:52:18.428151" elapsed="20.611459"/>
 </suite>
 <statistics>
 <total>
