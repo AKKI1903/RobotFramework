@@ -1,101 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-07-09T00:28:07.338040" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-07-09T13:03:15.949241" rpa="false" schemaversion="5">
 <suite id="s1" name="User Registration" source="C:\Users\ankushsharma\Tagesspiegel\tests\user_registration.robot">
 <test id="s1-t1" name="User Registration and Verification" line="5">
 <kw name="Open Browser And Navigate to Registration Form" owner="keywords">
 <kw name="New Browser" owner="Browser">
-<msg time="2024-07-09T00:28:08.790936" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\ankushsharma\\Tagesspiegel\\results\\browser\\traces\\e23ffaf3-f1e1-413e-86b0-aad6bb031ebf"}</msg>
-<msg time="2024-07-09T00:28:09.114813" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\ankushsharma\\Tagesspiegel\\results\\browser\\traces\\e23ffaf3-f1e1-413e-86b0-aad6bb031ebf"}</msg>
+<msg time="2024-07-09T13:03:18.631627" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\ankushsharma\\Tagesspiegel\\results\\browser\\traces\\2b48baf3-bdc6-4aed-8554-b8a0eb5ba622"}</msg>
+<msg time="2024-07-09T13:03:19.507732" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\ankushsharma\\Tagesspiegel\\results\\browser\\traces\\2b48baf3-bdc6-4aed-8554-b8a0eb5ba622"}</msg>
 <arg>headless=False</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2024-07-09T00:28:08.790936" elapsed="0.324876"/>
+<status status="PASS" start="2024-07-09T13:03:18.630626" elapsed="0.877106"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2024-07-09T00:28:12.102059" level="INFO">Successfully initialized new page object and opened url: https://www.tagesspiegel.de/</msg>
-<msg time="2024-07-09T00:28:12.102059" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<msg time="2024-07-09T13:03:22.673855" level="INFO">Successfully initialized new page object and opened url: https://www.tagesspiegel.de/</msg>
+<msg time="2024-07-09T13:03:22.674241" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
 <arg>${BASE_URL}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2024-07-09T00:28:09.115812" elapsed="2.986247"/>
+<status status="PASS" start="2024-07-09T13:03:19.509485" elapsed="3.164756"/>
 </kw>
 <kw name="Set Viewport Size" owner="Browser">
-<msg time="2024-07-09T00:28:12.160060" level="INFO">Set viewport size to: [object Object]</msg>
+<msg time="2024-07-09T13:03:22.805710" level="INFO">Set viewport size to: [object Object]</msg>
 <arg>1920</arg>
 <arg>1080</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Sets current Pages viewport size to specified dimensions.</doc>
-<status status="PASS" start="2024-07-09T00:28:12.102059" elapsed="0.058001"/>
+<status status="PASS" start="2024-07-09T13:03:22.674854" elapsed="0.131232"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-07-09T00:28:14.160479" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-07-09T13:03:24.807162" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-07-09T00:28:12.160060" elapsed="2.000419"/>
+<status status="PASS" start="2024-07-09T13:03:22.806935" elapsed="2.000227"/>
 </kw>
-<kw name="Select Frame">
-<msg time="2024-07-09T00:28:14.164480" level="FAIL">No keyword with name 'Select Frame' found.</msg>
-<arg>title=Iframe title</arg>
-<status status="FAIL" start="2024-07-09T00:28:14.164480" elapsed="0.000406">No keyword with name 'Select Frame' found.</status>
-</kw>
-<kw name="Wait For Elements State" owner="Browser">
-<arg>css=button[title="Alle akzeptieren"]</arg>
-<arg>visible</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2024-07-09T00:28:14.164886" elapsed="0.000000"/>
+<kw name="Set Selector Prefix" owner="Browser">
+<arg>${IFRAME_SELECTOR}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the prefix for all selectors in the given scope.</doc>
+<status status="PASS" start="2024-07-09T13:03:24.808285" elapsed="0.001030"/>
 </kw>
 <kw name="Click" owner="Browser">
-<arg>css=button[title="Alle akzeptieren"]</arg>
+<msg time="2024-07-09T13:03:24.812619" level="INFO">Clicks the element '&gt;&gt;&gt; //button[@title="Alle akzeptieren"]'.</msg>
+<arg>${ACCEPT_ALL}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2024-07-09T00:28:14.165445" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-09T13:03:24.810368" elapsed="0.236514"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2024-07-09T13:03:25.046882" level="INFO">Cookies accepted</msg>
 <arg>Cookies accepted</arg>
-<arg>console=</arg>
+<arg>console=True</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-07-09T00:28:14.165445" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-09T13:03:25.046882" elapsed="0.000000"/>
 </kw>
-<kw name="Wait For Elements State" owner="Browser">
-<arg>text=Anmelden</arg>
-<arg>visible</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="NOT RUN" start="2024-07-09T00:28:14.165445" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-09T13:03:18.629628" elapsed="6.417254"/>
 </kw>
-<status status="FAIL" start="2024-07-09T00:28:08.788935" elapsed="5.377550">No keyword with name 'Select Frame' found.</status>
-</kw>
-<status status="FAIL" start="2024-07-09T00:28:08.784934" elapsed="5.382552">No keyword with name 'Select Frame' found.</status>
+<status status="PASS" start="2024-07-09T13:03:18.622195" elapsed="6.425717"/>
 </test>
-<status status="FAIL" start="2024-07-09T00:28:07.340046" elapsed="7.087579"/>
+<status status="PASS" start="2024-07-09T13:03:15.951242" elapsed="9.323979"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="User Registration">User Registration</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="User Registration">User Registration</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-07-09T00:28:07.657140" level="ERROR">Error in file 'C:\Users\ankushsharma\Tagesspiegel\Resource\keywords.resource' on line 3: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  C:\Users\ankushsharma\AppData\Local\Programs\Python\Python312\Scripts\robot.exe
-  C:\Users\ankushsharma\AppData\Local\Programs\Python\Python312\python312.zip
-  C:\Users\ankushsharma\AppData\Local\Programs\Python\Python312\DLLs
-  C:\Users\ankushsharma\AppData\Local\Programs\Python\Python312\Lib
-  C:\Users\ankushsharma\AppData\Local\Programs\Python\Python312
-  C:\Users\ankushsharma\AppData\Local\Programs\Python\Python312\Lib\site-packages</msg>
 </errors>
 </robot>

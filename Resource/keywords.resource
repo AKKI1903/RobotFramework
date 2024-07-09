@@ -1,9 +1,10 @@
 *** Settings ***
 Library    Browser
-Library    SeleniumLibrary
 
 *** Variables ***
 ${BASE_URL}    https://www.tagesspiegel.de/
+${IFRAME_SELECTOR}    css=iframe#sp_message_iframe_1038892
+${ACCEPT_ALL}    >>>    //button[@title="Alle akzeptieren"]
 
 *** Keywords ***
 Open Browser And Navigate to Registration Form
@@ -11,10 +12,6 @@ Open Browser And Navigate to Registration Form
     New Page    ${BASE_URL}
     Set Viewport Size    1920    1080
     Sleep    2s
-    Select Frame    title=Iframe title
-    #Switch Page    iframe    title=Iframe title
-    Wait For Elements State    css=button[title="Alle akzeptieren"]    visible
-    Click    css=button[title="Alle akzeptieren"]
-    Log    Cookies accepted    console=
-    Wait For Elements State    text=Anmelden    visible
-         
+    Set Selector Prefix    ${IFRAME_SELECTOR} 
+    Click    ${ACCEPT_ALL}
+    Log    Cookies accepted    console=True
