@@ -67,15 +67,19 @@ Access Registration Link from Mail
     New Browser    headless=False
     New Page    ${link}
     Set Viewport Size    1920    1080
+    Sleep    1s
     Set Selector Prefix    ${IFRAME_SELECTOR_PASSWORD}
     Click    ${ACCEPT_ALL}
-    Sleep    300s
-    Log    Cookies accepted    console=True
-    Set Selector Prefix    ${FOCUS_PASSWORD_PAGE}
+    Sleep    1
+    Set Selector Prefix    ${None}
+    Wait For Elements State    ${FOCUS_PASSWORD_PAGE}    visible
+    Sleep    2s
+
     Fill Text    ${CREATE_PASSWORD}    Abc
     Fill Text    ${CONFIRM_PASSWORD}    XYZ
     Click    ${SAVE}
     Sleep    120s
+
 
 Check Email Connection
     Check Connection
