@@ -3,15 +3,17 @@ Library    Browser
 Library    imap_actions.py
 Library    RPA.Email.ImapSmtp    
 Library    RPA.RobotLogListener
-Variables  variables.py
+Library    String
+Library    Collections
+Variables  variables.py 
 
 *** Variables ***
-${EMAIL}                   anthony.smith.1991.01@gmail.com
-${EMAIL_PASSWORD}          asep mnxt fkzf jcce  # Use the generated app password here
+${EMAIL}                   ankush180393@gmail.com
+${EMAIL_PASSWORD}          mjih nqjs lhph ldus     #asep mnxt fkzf jcce  # Use the generated app password here mjih nqjs lhph ldus   
 ${IMAP_SERVER}             imap.gmail.com
 ${IMAP_PORT}               993
 ${REGISTRATION_EMAIL_SUBJECT}    Registration Confirmation
-${REGISTRATION_LINK_REGEX}    (?i)https://registration-link\.example\.com/\S+
+${REGISTRATION_LINK_REGEX}    https://mein\.tagesspiegel\.de/verify-token/[^\s"']+
 ${NEW_PASSWORD}            YourNewPassword123!
 
 *** Keywords ***
@@ -50,23 +52,30 @@ List Emails
 
 Get Latest Email
     [Arguments]    ${unread}
-    ${latest_email}=    imap_actions.Get Latest Email    ${unread}
-    [Return]    ${latest_email}
+    ${email_body}=    imap_actions.Get Latest Email    ${unread}
+    [Return]    ${email_body}
 
 
 Extract Registration Link
-    [Arguments]    ${email_body}    ${regex}
-    ${registration_link}=    imap_actions.Extract Registration Link    ${email_body}    ${regex}
+    [Arguments]    ${email_body}    
+    ${matches}=    Get Regexp Matches    ${email_body}    ${REGISTRATION_LINK_REGEX}
+    ${registration_link}=    Set Variable    ${matches}[0]
     [Return]    ${registration_link}
 
 Access Registration Link from Mail
     [Arguments]    ${link}
     New Browser    headless=False
     New Page    ${link}
-    Wait For Elements State    name=createPassword    visible
-    Fill Text    name=createPassword    ${NEW_PASSWORD}
-    Fill Text    name=confirmPassword    ${NEW_PASSWORD}
-    Click    xpath=//button[@type="submit"]
+    Set Viewport Size    1920    1080
+    Set Selector Prefix    ${IFRAME_SELECTOR_PASSWORD}
+    Click    ${ACCEPT_ALL}
+    Sleep    300s
+    Log    Cookies accepted    console=True
+    Set Selector Prefix    ${FOCUS_PASSWORD_PAGE}
+    Fill Text    ${CREATE_PASSWORD}    Abc
+    Fill Text    ${CONFIRM_PASSWORD}    XYZ
+    Click    ${SAVE}
+    Sleep    120s
 
 Check Email Connection
     Check Connection

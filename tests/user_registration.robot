@@ -11,8 +11,9 @@ Get Registration Link and Complete Registration
     # Check Email Connection
     # keywords.Print First Email Subject
     # ${emails}=    keywords.List Emails    False
-    ${latest_email}=    keywords.Get Latest Email    False
-    ${registration_link}=    keywords.Extract Registration Link    ${latest_email.body}    ${REGISTRATION_LINK_REGEX}
+    ${email_body}=    keywords.Get Latest Email    False
+    Log    Email Body: ${email_body}
+    ${registration_link}=    keywords.Extract Registration Link    ${email_body}    #${REGISTRATION_LINK_REGEX}
     Log    Registration Link: ${registration_link}
     Access Registration Link from Mail    ${registration_link}
     
