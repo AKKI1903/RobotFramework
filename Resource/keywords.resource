@@ -67,19 +67,29 @@ Access Registration Link from Mail
     New Browser    headless=False
     New Page    ${link}
     Set Viewport Size    1920    1080
-    Sleep    1s
     Set Selector Prefix    ${IFRAME_SELECTOR_PASSWORD}
     Click    ${ACCEPT_ALL}
-    Sleep    1
     Set Selector Prefix    ${None}
     Wait For Elements State    ${FOCUS_PASSWORD_PAGE}    visible
-    Sleep    2s
-
-    Fill Text    ${CREATE_PASSWORD}    Abc
-    Fill Text    ${CONFIRM_PASSWORD}    XYZ
+    Fill Text    ${CREATE_PASSWORD}    Qwertz12#
+    Fill Text    ${CONFIRM_PASSWORD}    Qwertz12#
     Click    ${SAVE}
-    Sleep    120s
+    Sleep    5s
+    ${current_url}=    Get Url
+    Should Be Equal    ${current_url}    ${EXPECTED_URL}
+    Close Page
 
+Verify User is Logged in
+    New Page    ${BASE_URL}
+    Set Viewport Size    1920    1080
+    Sleep    1s
+    Wait For Elements State    ${MEIN_KONTO}    visible
+    Highlight Elements    ${MEIN_KONTO} 
+    Click    ${MEIN_KONTO}
+    Highlight Elements    id=myAccount-panel
+    Wait For Elements State    id=myAccount-panel    visible
+    Click    ${MEIN_PROFIL}
+    Sleep    150s
 
 Check Email Connection
     Check Connection

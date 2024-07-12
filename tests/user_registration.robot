@@ -16,5 +16,9 @@ Get Registration Link and Complete Registration
     ${registration_link}=    keywords.Extract Registration Link    ${email_body}    #${REGISTRATION_LINK_REGEX}
     Log    Registration Link: ${registration_link}
     Access Registration Link from Mail    ${registration_link}
+    # Verify User is Logged in
     
+
+# User Verification
+#     Verify User is Logged in
     
