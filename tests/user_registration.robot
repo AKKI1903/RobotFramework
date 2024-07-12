@@ -8,17 +8,7 @@ User Registration and Verification
 
 Get Registration Link and Complete Registration
     Create Imap Client    ${IMAP_SERVER}    ${EMAIL}    ${EMAIL_PASSWORD}
-    # Check Email Connection
-    # keywords.Print First Email Subject
-    # ${emails}=    keywords.List Emails    False
     ${email_body}=    keywords.Get Latest Email    False
-    Log    Email Body: ${email_body}
-    ${registration_link}=    keywords.Extract Registration Link    ${email_body}    #${REGISTRATION_LINK_REGEX}
-    Log    Registration Link: ${registration_link}
+    ${registration_link}=    keywords.Extract Registration Link    ${email_body}    
     Access Registration Link from Mail    ${registration_link}
-    # Verify User is Logged in
-    
-
-# User Verification
-#     Verify User is Logged in
-    
+    Verify User is Logged in

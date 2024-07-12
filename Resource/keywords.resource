@@ -1,10 +1,7 @@
 *** Settings ***
 Library    Browser 
 Library    imap_actions.py
-Library    RPA.Email.ImapSmtp    
-Library    RPA.RobotLogListener
 Library    String
-Library    Collections
 Variables  variables.py 
 
 *** Variables ***
@@ -12,7 +9,6 @@ ${EMAIL}                   ankush180393@gmail.com
 ${EMAIL_PASSWORD}          mjih nqjs lhph ldus     #asep mnxt fkzf jcce  # Use the generated app password here mjih nqjs lhph ldus   
 ${IMAP_SERVER}             imap.gmail.com
 ${IMAP_PORT}               993
-${REGISTRATION_EMAIL_SUBJECT}    Registration Confirmation
 ${REGISTRATION_LINK_REGEX}    https://mein\.tagesspiegel\.de/verify-token/[^\s"']+
 ${NEW_PASSWORD}            YourNewPassword123!
 
@@ -35,7 +31,8 @@ Fill Registration Form and Submit
     Wait For Elements State    ${REGISTRATION_BUTTON}    visible
     Click    ${REGISTRATION_BUTTON}
     Wait For Elements State    ${EMAIL_INPUT}    visible
-    Fill Text    ${EMAIL_INPUT}    test@example.com
+
+    Fill Text    ${EMAIL_INPUT}    ${EMAIL}
     Fill Text    ${FIRST_NAME}    Abc
     Fill Text    ${LAST_NAME}    XYZ
     Click    ${REGISTRATION}
@@ -44,11 +41,6 @@ Fill Registration Form and Submit
 Create Imap Client
     [Arguments]    ${server}    ${username}    ${password}
     Create Email Handler    ${server}    ${username}    ${password}
-
-List Emails
-    [Arguments]    ${unread}
-    ${emails}=    imap_actions.List Emails    ${unread}
-    [Return]    ${emails}
 
 Get Latest Email
     [Arguments]    ${unread}
@@ -71,11 +63,11 @@ Access Registration Link from Mail
     Click    ${ACCEPT_ALL}
     Set Selector Prefix    ${None}
     Wait For Elements State    ${FOCUS_PASSWORD_PAGE}    visible
-    Fill Text    ${CREATE_PASSWORD}    Qwertz12#
-    Fill Text    ${CONFIRM_PASSWORD}    Qwertz12#
+    Fill Text    ${CREATE_PASSWORD}    ${NEW_PASSWORD}
+    Fill Text    ${CONFIRM_PASSWORD}    ${NEW_PASSWORD}
     Click    ${SAVE}
     Sleep    5s
-    ${current_url}=    Get Url
+    ${current_url} =    Get Url
     Should Be Equal    ${current_url}    ${EXPECTED_URL}
     Close Page
 
@@ -84,15 +76,12 @@ Verify User is Logged in
     Set Viewport Size    1920    1080
     Sleep    1s
     Wait For Elements State    ${MEIN_KONTO}    visible
-    Highlight Elements    ${MEIN_KONTO} 
     Click    ${MEIN_KONTO}
-    Highlight Elements    id=myAccount-panel
-    Wait For Elements State    id=myAccount-panel    visible
+    ${element} =    Wait For Elements State    id=myAccount-panel    visible
+    Wait For Elements State    ${MEIN_PROFIL}    visible
     Click    ${MEIN_PROFIL}
+    Wait For Elements State    css=#tab-personal-data    visible    timeout=5s 
+    ${profile_email_element}=    Get Element    ${EMAIL_VALUE}
+    ${profile_email}=    Get Text    ${profile_email_element}
+    Should Be Equal As Strings    ${profile_email}    ${EMAIL}
     Sleep    150s
-
-Check Email Connection
-    Check Connection
-
-Print First Email Subject
-    imap_actions.Print First Email Subject
