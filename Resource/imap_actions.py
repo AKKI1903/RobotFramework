@@ -1,6 +1,4 @@
 from RPA.Email.ImapSmtp import ImapSmtp
-from typing import List, Dict
-
 
 class EmailHandler:
     def __init__(self, imap_server: str, email_account: str, email_password: str):

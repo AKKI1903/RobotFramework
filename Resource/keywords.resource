@@ -4,16 +4,9 @@ Library    imap_actions.py
 Library    String
 Variables  variables.py 
 
-*** Variables ***
-${EMAIL}                   ankush180393@gmail.com
-${EMAIL_PASSWORD}          mjih nqjs lhph ldus     #asep mnxt fkzf jcce  # Use the generated app password here mjih nqjs lhph ldus   
-${IMAP_SERVER}             imap.gmail.com
-${IMAP_PORT}               993
-${REGISTRATION_LINK_REGEX}    https://mein\.tagesspiegel\.de/verify-token/[^\s"']+
-${NEW_PASSWORD}            YourNewPassword123!
-
 *** Keywords ***
 Open Browser And Navigate to Registration Form
+    [Documentation]    Opens the Tagesspiegel website and navigates to the registration page.
     New Browser    headless=False
     Set Browser Timeout    10s
     New Page    ${BASE_URL}
@@ -26,15 +19,15 @@ Open Browser And Navigate to Registration Form
     Click    ${ANMELDEN_SELECTOR}
 
 Fill Registration Form and Submit
+    [Documentation]    Fills out the registration form with test data.
     Set Selector Prefix    ${REGISTRATION_IFRAME}
     Set Browser Timeout    30s
     Wait For Elements State    ${REGISTRATION_BUTTON}    visible
     Click    ${REGISTRATION_BUTTON}
     Wait For Elements State    ${EMAIL_INPUT}    visible
-
     Fill Text    ${EMAIL_INPUT}    ${EMAIL}
-    Fill Text    ${FIRST_NAME}    Abc
-    Fill Text    ${LAST_NAME}    XYZ
+    Fill Text    ${FIRST_NAME}    Andrew
+    Fill Text    ${LAST_NAME}    Smith
     Click    ${REGISTRATION}
     Sleep    5s
 
@@ -49,12 +42,14 @@ Get Latest Email
 
 
 Extract Registration Link
+    [Documentation]    Retrieves the latest email from the test email account.
     [Arguments]    ${email_body}    
     ${matches}=    Get Regexp Matches    ${email_body}    ${REGISTRATION_LINK_REGEX}
     ${registration_link}=    Set Variable    ${matches}[0]
     [Return]    ${registration_link}
 
 Access Registration Link from Mail
+    [Documentation]    Follows the registration link and completes the process. Create and save password.
     [Arguments]    ${link}
     New Browser    headless=False
     New Page    ${link}
@@ -72,9 +67,9 @@ Access Registration Link from Mail
     Close Page
 
 Verify User is Logged in
+    [Documentation]    Verifies that the user is successfully registered and logged in.
     New Page    ${BASE_URL}
     Set Viewport Size    1920    1080
-    Sleep    1s
     Wait For Elements State    ${MEIN_KONTO}    visible
     Click    ${MEIN_KONTO}
     ${element} =    Wait For Elements State    id=myAccount-panel    visible
@@ -84,4 +79,3 @@ Verify User is Logged in
     ${profile_email_element}=    Get Element    ${EMAIL_VALUE}
     ${profile_email}=    Get Text    ${profile_email_element}
     Should Be Equal As Strings    ${profile_email}    ${EMAIL}
-    Sleep    150s
