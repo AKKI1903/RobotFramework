@@ -1,5 +1,18 @@
-# Base URL
-BASE_URL = 'https://www.tagesspiegel.de/'
+import os
+
+# Environment selection
+# Set this to 'production', 'staging', or 'test1', or use an environment variable
+CURRENT_ENV = os.getenv('TEST_ENVIRONMENT', 'production')
+
+# Environment URLs
+ENV_URLS = {
+    'production': 'https://www.tagesspiegel.de/',
+    'staging': 'https://staging.tagesspiegel.de/',
+    'test1': 'https://test1.tagesspiegel.de/'
+}
+
+# Base URL (dynamically set based on the current environment)
+BASE_URL = ENV_URLS.get(CURRENT_ENV, ENV_URLS['production'])
 
 IFRAME_SELECTOR = 'css=iframe#sp_message_iframe_1038892'        
 IFRAME_SELECTOR_PASSWORD = 'css=iframe#sp_message_iframe_1117797'
@@ -21,7 +34,7 @@ CONFIRM_PASSWORD = 'xpath=//*[@id="forms/formSetPassword_password_confirmation"]
 
 FOCUS_PASSWORD_PAGE = 'xpath=//*[@action="/sso/set-password"]'
 
-EXPECTED_URL = 'https://mein.tagesspiegel.de/'
+EXPECTED_URL = f'https://mein.{CURRENT_ENV}.tagesspiegel.de/' if CURRENT_ENV != 'production' else 'https://mein.tagesspiegel.de/'
 
 MEIN_KONTO = '//*[@id="myAccount-control"]/span[2]'
 MEIN_PROFIL = 'xpath=//*[@id="myAccount-panel"]/div/a[1]'

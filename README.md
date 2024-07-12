@@ -40,3 +40,11 @@ To run the automation suite:
 
 `robot -d results tests/user_registration.robot`
 
+You can also set the environment before running your tests. Depening on your selection. 
+`production`
+`staging`
+`test1`
+By default it is set to Production.
+
+`TEST_ENVIRONMENT=staging robot -d results tests/user_registration.robot`
+
